@@ -17,15 +17,17 @@ img {
 
     /** Global **/
 .contenedor {
-    max-width: 120rem; /* = 1200px */
+    max-width: 90%;
     margin: 0 auto;
 }
 
 h1 {
     font-size: 3.8rem;
+    line-height: 4rem;
 }
 h2 {
     font-size: 3.4rem;
+    line-height: 4.5rem;
 }
 h3 {
     font-size: 3rem;
@@ -52,6 +54,11 @@ p {
 .pad-bot {
     padding-bottom: 3rem;
 }
+@media (min-width: 768px) {
+    .pad-bot {
+        padding-bottom: 0;
+    }
+}
 .fw-300 {
     font-weight: 300;
 }
@@ -60,6 +67,9 @@ p {
 }
 .contenido-centrado {
     max-width: 800px;
+}
+.flex {
+    display: flex;
 }
 .d-block {
     display: block!important;
@@ -76,6 +86,12 @@ p {
     display: inline-block;
     text-align: center;
     border: none;
+    flex: 1 0 auto;
+}
+@media (min-width: 768px) {
+    .boton {
+        flex: 0 0 auto;
+    }
 }
 .boton:hover {
     cursor: pointer;
@@ -111,12 +127,31 @@ p {
     max-width: 60rem;
     line-height: 2;
     font-size: 3.5rem;
+    text-align: center;
 }
-.barra {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3rem 0 2rem 0;
+@media (min-width: 768px) {
+    .contenido-header h1 {
+        text-align: start;
+    }
+}
+.barra a {
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .barra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 0 2rem 0;
+    }  
+}
+.posicion-logo {
+    padding: 2.5rem 0 0 2.5rem; 
+}
+@media (min-width: 768px) {
+    .posicion-logo {
+        padding: 0;
+    }
 }
 
     /** Navegacion**/
@@ -124,19 +159,28 @@ p {
     color: #ffffff;
     text-decoration: none;
     font-size: 1.8rem;
-    margin-right: 2rem;
+    display: block;
+    margin: 2rem 0 0 0;
+}
+@media (min-width: 768px) {
+    .navegacion a {
+        display: inline-block;
+        margin: 0 2rem 0 0;
+    }
+    .navegacion a:last-of-type {
+        margin: 0;
+    }
 }
 .navegacion a:hover {
     color: #71b100;
 }
-.navegacion a:last-of-type {
-    margin: 0;
-}
 
     /** Iconos Nosotros**/
-.iconos-nosotros {
-    display: flex;
-    justify-content: space-between;
+@media (min-width: 768px) {
+    .iconos-nosotros {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 .iconos h3 {
     text-transform: uppercase;
@@ -147,10 +191,12 @@ p {
 }
 
     /** Anuncios **/
-.contenedor-anuncios {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+@media (min-width: 768px) {
+    .contenedor-anuncios {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 }
 .anuncio {
     flex: 0 0 calc(33.3% - 1rem); /*     flex-grow: 0;    flex-shrink: 0;    flex-basis: calc(33.3% - 1rem); */
@@ -172,17 +218,16 @@ p {
 }
 .iconos-caracteristicas {
     list-style: none;
-    padding: 0rem 4rem;
+    padding: 0rem 1rem;
     display: flex;
     justify-content: space-between;
     flex: 1;
-    max-width: 40rem;
 }
 .iconos-caracteristicas li {
     display: flex;
 }
 .iconos-caracteristicas li img {
-    margin-right: 1.5rem;
+    margin-right: 0.5rem;
 }
 .ver-todas {
     display: flex;
@@ -201,25 +246,35 @@ p {
 .contenido-contacto {
     flex: 1;
     color: #ffffff;
+    text-align: center;
 }
+@media (min-width: 768px) {
+    .contenido-contacto {
+        text-align: start;
+    }
+}
+
 .contenido-contacto p {
     font-size: 1.8rem;
 }
 
     /** Sección Inferior **/
-.seccion-inferior {
-    display: flex;
-    justify-content: space-between;
-}
-.seccion-inferior .blog {
-    flex-basis: 62%;
-}
-.seccion-inferior .testimoniales {
-    flex-basis: calc(38% - 2rem);
+@media (min-width: 768px) {
+    .seccion-inferior {
+        display: flex;
+        justify-content: space-between;
+    }
+    .seccion-inferior .blog {
+        flex-basis: calc(62% - 2rem);
+    }
+    .seccion-inferior .testimoniales {
+        flex-basis: calc(38% - 2rem);
+    }
 }
 .entrada-blog {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 3rem;
 }
 .entrada-blog :last-of-type {
     margin-bottom: 0;
@@ -288,12 +343,26 @@ p {
 }
 .contenedor-footer {
     padding: 2rem 0;
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .contenedor-footer {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 .copyright {
     margin: 0;
+    padding-top: 2rem;
     color: #ffffff;
+    text-align: end;
+    font-size: 1.4rem;
+}
+@media (min-width: 768px) {
+    .copyright {
+        padding: 0;
+        font-size: 1.5rem;
+    }
 }
 
     /** Internas **/
